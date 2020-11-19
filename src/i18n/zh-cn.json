@@ -1,0 +1,28 @@
+{
+  "copy": "复制",
+  "click_copy": "点击复制",
+  "click_upload": "点击上传",
+  "ok": "确定",
+  "cancel": "取消",
+  "empty": "暂无数据",
+  "no_more": "已经到底啦",
+  "loading": "载入中",
+  "ok2": "知道了",
+  "login": "登录",
+  "success": "成功",
+  "fail": "失败",
+  "be_careful": "请注意！",
+  "detail": "详情",
+  "need_signin": "请登录",
+
+  "sidebar_menu_user": "个人主页",
+  "sidebar_menu_missions": "任务中心",
+  "sidebar_menu_history": "历史记录",
+  "sidebar_menu_contact": "联系我们",
+
+  "top_wallet_connect": "连接钱包",
+  "top_language_zh-cn": "CN",
+  "top_language_en": "EN",
+
+  "connectwallet_title": "钱包登录"
+}

@@ -1,0 +1,15 @@
+#main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  .site-page {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  @import './style.m.scss';
+}
