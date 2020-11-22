@@ -19,7 +19,7 @@ function Sidebar() {
 
   const { goto, currentPageConfig } = routerModel;
 
-  const { header } = currentPageConfig;
+  const { sidebar } = currentPageConfig;
 
   return (
     <div id="sidebar">
@@ -30,16 +30,16 @@ function Sidebar() {
           </a>
         </div>
         <div className="menu">
-          <div className={classnames('menu-item', { active: header.active === 'saving' })}>
+          <div className={classnames('menu-item', { active: sidebar.active === 'user' })}>
             <a onClick={() => goto('/')}><UserOutlined /><FormattedMessage id="sidebar_menu_user" /></a>
           </div>
-          <div className={classnames('menu-item', { active: header.active === 'swap' })}>
+          <div className={classnames('menu-item', { active: sidebar.active === 'missions' })}>
             <a onClick={() => goto('/missions')}><CrownOutlined /><FormattedMessage id="sidebar_menu_missions" /></a>
           </div>
-          <div className={classnames('menu-item', { active: header.active === 'history' })}>
+          <div className={classnames('menu-item', { active: sidebar.active === 'history' })}>
             <a onClick={() => goto('/history')}><HistoryOutlined /><FormattedMessage id="sidebar_menu_history" /></a>
           </div>
-          <div className={classnames('menu-item', { active: header.active === 'contact' })}>
+          <div className={classnames('menu-item', { active: sidebar.active === 'contact' })}>
             <a onClick={() => goto('/contact')}><CustomerServiceOutlined /><FormattedMessage id="sidebar_menu_contact" /></a>
           </div>
         </div>

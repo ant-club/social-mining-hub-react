@@ -1,9 +1,10 @@
 /* eslint-disable prefer-promise-reject-errors */
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { createContainer } from 'unstated-next';
-import initProvider from './providers';
+import * as ethUtil from 'ethereumjs-util';
 import { isEth } from '@utils';
 import fetch from '@utils/fetch';
+import initProvider from './providers';
 import QUERYS from '../../querys';
 
 const defaultStates = {
@@ -15,7 +16,8 @@ const defaultStates = {
 
 const MAX_VAL = '115792089237316195423570985008687907853269984665640564039457584007913129639935';
 
-const getLoginToken = () => fetch.get(QUERYS.LOGIN_TOKEN());
+const getLoginTokenCallback = () => fetch.get(QUERYS.LOGIN_TOKEN());
+const loginCallback = data => fetch.post(QUERYS.LOGIN, data);
 
 function useWeb3(customInitialStates = {}) {
   const initialStates = {
@@ -76,12 +78,52 @@ function useWeb3(customInitialStates = {}) {
     return handler().then(() => updateAccounts());
   }, [connectHandler, updateAccounts, web3]);
 
-  const login = useCallback((address) => {
-    getLoginToken().then((token) => {
-      const sToken = `${token}`;
-      console.log(sToken);
+  const login = useCallback(address => getLoginTokenCallback().then(({ message, nonce }) => {
+    const token = message.replace('%nonce', nonce);
+    if (!web3.current) return Promise.reject({ code: -1 });
+    const web3Instance = web3.current;
+    const msg = ethUtil.bufferToHex(Buffer.from(token, 'utf8'));
+    const params = [msg, address];
+    const method = 'personal_sign';
+    return new Promise((resolve, reject) => {
+      web3Instance.currentProvider.sendAsync({
+        method,
+        params,
+        address,
+      }, (err, result) => {
+        if (err) {
+          reject({ code: -1, err });
+          return;
+        }
+        if (result.error) {
+          reject({ code: -1, err: result.error });
+          return;
+        }
+
+        const payload = {
+          address,
+          nonce,
+          sig: result.result,
+        };
+        resolve(payload);
+        // console.log('recovering...');
+        // console.dir({ msgParams });
+        // const recovered = sigUtil.recoverPersonalSignature(msgParams);
+        // console.dir({ recovered });
+
+        // if (recovered === from) {
+        //   console.log('SigUtil Successfully verified signer as ' + from);
+        //   window.alert('SigUtil Successfully verified signer as ' + from);
+        // } else {
+        //   console.dir(recovered);
+        //   console.log('SigUtil Failed to verify signer when comparing ' + recovered.result + ' to ' + from);
+        //   console.log('Failed, comparing %s to %s', recovered, from);
+        // }
+      });
     });
-  }, [web3]);
+  }).then(
+    loginCallback,
+  ), [web3]);
 
   return {
     web3,

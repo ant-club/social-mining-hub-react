@@ -94,6 +94,11 @@ const fetch = {
       data: JSON.stringify(body),
     });
   },
+  ajax(jQueryAjaxOptions) {
+    return getAjaxPromise({
+      ...jQueryAjaxOptions,
+    });
+  },
   jsonp(url, data) {
     let queryUrl = url;
     if (data) {

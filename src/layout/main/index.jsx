@@ -6,9 +6,7 @@ import './style.scss';
 function Main({ children }) {
   return (
     <div id="main">
-      <div id="mainContent">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

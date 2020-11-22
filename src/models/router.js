@@ -15,36 +15,8 @@ const pathConfigs = {
   '/': {
     key: 'index',
     refresh: [],
-    header: {
-      active: 'saving',
-    },
-  },
-  '/coin/detail/:tokenAddress': {
-    key: 'coin_detail',
-    refresh: [],
-    header: {
-      active: 'saving',
-    },
-  },
-  '/portfolio': {
-    key: 'portfolio',
-    refresh: [],
-    header: {
-      active: 'portfolio',
-    },
-  },
-  '/history': {
-    key: 'history',
-    refresh: [],
-    header: {
-      active: 'history',
-    },
-  },
-  '/swap': {
-    key: 'swap',
-    refresh: [],
-    header: {
-      active: 'swap',
+    sidebar: {
+      active: 'user',
     },
   },
 };

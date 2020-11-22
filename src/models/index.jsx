@@ -2,11 +2,15 @@ import React from 'react';
 import I18n from './i18n';
 import Router from './router';
 import Web3 from './web3v2';
+import User from './user';
+import Utils from './utils';
 
 const models = {
   I18n,
   Router,
   Web3,
+  User,
+  Utils,
 };
 
 
