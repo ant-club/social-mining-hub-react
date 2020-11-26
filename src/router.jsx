@@ -4,6 +4,7 @@ import Main from './layout/main';
 import Sidebar from './layout/sidebar';
 import ConnectWallet from './layout/connectWallet';
 import Top from './layout/top';
+import Profile from './layout/profile';
 import Index from './components/index';
 import Store from './models';
 
@@ -15,9 +16,12 @@ function MyRouter(props) {
           <Sidebar />
           <Main>
             <Top />
-            <Switch>
-              <Route path="/" exact component={Index} />
-            </Switch>
+            <div className="site-page">
+              <Profile />
+              <Switch>
+                <Route path="/" exact component={Index} />
+              </Switch>
+            </div>
           </Main>
         </div>
         <ConnectWallet />
