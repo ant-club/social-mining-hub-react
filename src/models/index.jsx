@@ -3,6 +3,7 @@ import I18n from './i18n';
 import Router from './router';
 import Web3 from './web3v2';
 import User from './user';
+import Mission from './mission';
 import Utils from './utils';
 
 const models = {
@@ -10,6 +11,7 @@ const models = {
   Router,
   Web3,
   User,
+  Mission,
   Utils,
 };
 

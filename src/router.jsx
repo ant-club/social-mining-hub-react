@@ -6,6 +6,8 @@ import ConnectWallet from './layout/connectWallet';
 import Top from './layout/top';
 import Profile from './layout/profile';
 import Index from './components/index';
+import Missions from './components/missions';
+import Mission from './components/mission';
 import Store from './models';
 
 function MyRouter(props) {
@@ -20,6 +22,8 @@ function MyRouter(props) {
               <Profile />
               <Switch>
                 <Route path="/" exact component={Index} />
+                <Route path="/missions" exact component={Missions} />
+                <Route path="/mission/:id" exact component={Mission} key="mission" />
               </Switch>
             </div>
           </Main>

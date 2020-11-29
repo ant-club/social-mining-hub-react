@@ -19,6 +19,20 @@ const pathConfigs = {
       active: 'user',
     },
   },
+  '/missions': {
+    key: 'missions',
+    refresh: [],
+    sidebar: {
+      active: 'missions',
+    },
+  },
+  '/mission/:id': {
+    key: 'mission',
+    refresh: [],
+    sidebar: {
+      active: 'missions',
+    },
+  },
 };
 
 const defaultStates = {

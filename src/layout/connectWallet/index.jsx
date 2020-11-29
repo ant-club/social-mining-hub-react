@@ -6,6 +6,7 @@ import Web3 from '@models/web3v2';
 import Router from '@models/router';
 import User from '@models/user';
 import { Spin } from '@common/antd';
+import EzModal from '@common/ezModal';
 import './style.scss';
 
 export default function ConnectWallet() {
@@ -41,24 +42,22 @@ export default function ConnectWallet() {
   const show = !currentAccount || isConnectWalletVisible || submiting;
 
   return (
-    <div id="connectwallet" className={classnames({ show })}>
-      <div className="connectwallet-container">
-        {submiting ? (
-          <Spin />
-        ) : (
-          <>
-            <div className="title"><FormattedMessage id="connectwallet_title" /></div>
-            <div className="wallet" onClick={() => handleLogin('metamask')}>
-              <img src={ASSETS.walletMetamask} alt="" />
-              <span>Metamask</span>
-            </div>
-            <div className="wallet disabled">
-              <img src={ASSETS.walletWalletconnect} alt="" />
-              <span>Wallet Connect</span>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
+    <EzModal visible={show} closable={false} className={classnames('connect-wallet-modal', { submiting })} width="">
+      {submiting ? (
+        <Spin />
+      ) : (
+        <>
+          <div className="title"><FormattedMessage id="connectwallet_title" /></div>
+          <div className="wallet" onClick={() => handleLogin('metamask')}>
+            <img src={ASSETS.walletMetamask} alt="" />
+            <span>Metamask</span>
+          </div>
+          <div className="wallet disabled">
+            <img src={ASSETS.walletWalletconnect} alt="" />
+            <span>Wallet Connect</span>
+          </div>
+        </>
+      )}
+    </EzModal>
   );
 }

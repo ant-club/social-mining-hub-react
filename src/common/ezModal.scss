@@ -1,0 +1,14 @@
+.ez-modal {
+  .ant-modal-content {
+    border-radius: 10px;
+  }
+  .ant-modal-body {
+    padding: 30px;
+  }
+  &-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #393857;
+    margin-bottom: 30px;
+  }
+}

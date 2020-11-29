@@ -13,6 +13,10 @@ const QUERYS = {
   USER_INFO: '/api/v1/user/me.json',
   UPLOAD_ATTACHMENT: '/api/v1/upload_attachment.json',
   CONNECT_MEDIUM: token => `/auth/medium?token=${token}`,
+  MISSIONS: '/api/v1/missions.json',
+  MISSION: id => `/api/v1/mission/${id}.json`,
+  USER_MISSION: id => `/api/v1/user/mission/${id}.json`,
+  USER_SUB_MISSION: id => `/api/v1/user/sub_mission/${id}.json`,
 };
 
 const { API } = config;

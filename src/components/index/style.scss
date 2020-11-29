@@ -1,11 +1,12 @@
 #index {
+  padding: 40px;
 
   &.site-page {
     padding: 0;
   }
 
   .form {
-    padding: 40px 80px;
+    padding: 0 40px;
 
     &-item {
       display: flex;

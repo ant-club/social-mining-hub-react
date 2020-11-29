@@ -1,24 +1,9 @@
-#connectwallet {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba($color: #000, $alpha: 0.3);
-  display: none;
+.connect-wallet-modal {
+  width: 430px;
 
-  &.show {
-    display: block;
-  }
-
-  .connectwallet-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
+  &.submiting {
+    width: 100px;
+    text-align: center;
   }
 
   .title {

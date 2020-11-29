@@ -1,0 +1,74 @@
+#missions {
+  padding: 40px;
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+
+  .mission {
+    position: relative;
+    display: flex;
+    border: #EFF3F7 solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #A16ECB;
+    }
+
+    .img {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 24px;
+
+      img {
+        height: 66px;
+        width: 66px;
+        border-radius: 50%;
+      }
+    }
+
+    .info {
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: 24px 24px 24px 0;
+
+      .title {
+        font-size: 22px;
+        color: #393857;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .date {
+        color: #B3B3B3;
+      }
+    }
+
+    .state {
+      position: absolute;
+      top: 20px;
+      right: 14px;
+      color: #fff;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 4px;
+
+      &.pending {
+        background: #A16ECB;
+      }
+      &.progressing {
+        background: #02C075;
+      }
+      &.finished {
+        background: #D8D8D8;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  @import './style.m.scss';
+}
