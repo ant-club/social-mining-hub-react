@@ -72,7 +72,7 @@ function MissionDetail({ match }) {
     }
   }, []);
 
-  useEffect(() => {
+  const updateUserMissionState = useCallback(() => {
     if (userInfo && data) {
       getUserMissionState(data.id).then((response) => {
         const us = {};
@@ -82,6 +82,10 @@ function MissionDetail({ match }) {
         setUserState(us);
       });
     }
+  }, [userInfo, data, getUserMissionState, setUserState]);
+
+  useEffect(() => {
+    updateUserMissionState();
   }, [userInfo, data]);
 
   const handleExpendGroup = (provider) => {
@@ -97,17 +101,12 @@ function MissionDetail({ match }) {
 
   const handleSubmitSuccess = () => {
     showSubmitModal(false);
-    getUserMissionState(data.id).then((response) => {
-      const us = {};
-      response.forEach((state) => {
-        us[state.subMissionId] = state;
-      });
-      setUserState(us);
-    });
+    updateUserMissionState();
   };
 
   const {
     subMissionGroups,
+    state,
   } = (data || {});
   return (
     <div id="mission">
@@ -131,7 +130,7 @@ function MissionDetail({ match }) {
                       <div className="info">
                         <div className="title">{subMission.title}</div>
                         <div className="description">{subMission.description}</div>
-                        {!userState[subMission.id] && (
+                        {!userState[subMission.id] && state === 'progressing' && (
                           <div className="opt">
                             <Button type="primary" onClick={() => handleOpenSubmit(subMission)}><FormattedMessage id="mission_btn_submit" /></Button>
                           </div>

@@ -90,5 +90,9 @@
   "mission_submit_link_tip": "请填写完成任务产生的链接",
   "mission_submit_image": "提交完成任务证明",
   "mission_submit_image_tip": "请上传完成任务产生的截图",
-  "mission_submit_submit": "提交证明"
+  "mission_submit_submit": "提交证明",
+  "mission_submit_social_tip_1_1": "请使用 {provider} 账号：",
+  "mission_submit_social_tip_1_2": " 完成此次任务。",
+  "mission_submit_social_tip_2_1": "请前往 ",
+  "mission_submit_social_tip_2_2": " 绑定 {provider} 账号。"
 }

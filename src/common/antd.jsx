@@ -11,6 +11,7 @@ import notification from 'antd/lib/notification';
 import Select from 'antd/lib/select';
 import Modal from 'antd/lib/modal';
 import Form from 'antd/lib/form';
+import Alert from 'antd/lib/alert';
 
 import './antd.less';
 
@@ -28,4 +29,5 @@ export {
   Select,
   Modal,
   Form,
+  Alert,
 };

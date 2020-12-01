@@ -8,8 +8,8 @@ function getAjaxPromise(options) {
     $.ajax(options).done((data) => {
       if (data.success) {
         resolve(data.data);
-      } else if (data.msg) {
-        message.error(data.msg);
+      } else if (data.error) {
+        message.error(data.error.message);
       }
     });
   });
