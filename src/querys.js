@@ -17,6 +17,7 @@ const QUERYS = {
   MISSION: id => `/api/v1/mission/${id}.json`,
   USER_MISSION: id => `/api/v1/user/mission/${id}.json`,
   USER_SUB_MISSION: id => `/api/v1/user/sub_mission/${id}.json`,
+  USER_SUB_MISSIONS: '/api/v1/user/sub_missions.json',
 };
 
 const { API } = config;

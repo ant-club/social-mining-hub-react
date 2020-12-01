@@ -2,8 +2,6 @@
   .tr {
     display: flex;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
     font-size: 16px;
 
     .th,
@@ -16,7 +14,7 @@
     }
 
     .th {
-      color: #29446E;
+      color: #393857;
       font-weight: 500;
     }
 
@@ -28,8 +26,8 @@
   }
 
   .tbody .tr {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: #fff;
   }
 }

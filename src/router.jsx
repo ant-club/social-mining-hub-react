@@ -8,6 +8,7 @@ import Profile from './layout/profile';
 import Index from './components/index';
 import Missions from './components/missions';
 import Mission from './components/mission';
+import History from './components/history';
 import Store from './models';
 
 function MyRouter(props) {
@@ -23,7 +24,8 @@ function MyRouter(props) {
               <Switch>
                 <Route path="/" exact component={Index} />
                 <Route path="/missions" exact component={Missions} />
-                <Route path="/mission/:id" exact component={Mission} key="mission" />
+                <Route path="/mission/:id" exact component={Mission} />
+                <Route path="/history" exact component={History} />
               </Switch>
             </div>
           </Main>

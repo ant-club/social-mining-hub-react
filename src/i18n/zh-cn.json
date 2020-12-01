@@ -81,6 +81,7 @@
   "mission_group_title_medium": "Medium 任务",
   "mission_group_title_facebook": "Facebook 任务",
   "mission_state_todo": "未完成",
+  "mission_state_all": "全部",
   "mission_state_submitted": "已提交",
   "mission_state_reject": "失败",
   "mission_state_finish": "已完成",
@@ -94,5 +95,10 @@
   "mission_submit_social_tip_1_1": "请使用 {provider} 账号：",
   "mission_submit_social_tip_1_2": " 完成此次任务。",
   "mission_submit_social_tip_2_1": "请前往 ",
-  "mission_submit_social_tip_2_2": " 绑定 {provider} 账号。"
+  "mission_submit_social_tip_2_2": " 绑定 {provider} 账号。",
+
+  "history_table_date": "时间",
+  "history_table_mission": "任务",
+  "history_table_sub_mission": "子任务",
+  "history_table_state": "状态"
 }

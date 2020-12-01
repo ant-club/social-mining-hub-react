@@ -33,6 +33,13 @@ const pathConfigs = {
       active: 'missions',
     },
   },
+  '/history': {
+    key: 'history',
+    refresh: [],
+    sidebar: {
+      active: 'history',
+    },
+  },
 };
 
 const defaultStates = {

@@ -15,6 +15,7 @@ const uploadAttachmentCallback = data => fetch.ajax({
   contentType: false,
 });
 const getUserMissionStateCallback = id => fetch.get(QUERYS.USER_MISSION(id));
+const getUserSubMissionsCallback = data => fetch.get(QUERYS.USER_SUB_MISSIONS, data);
 const submitUserSubMissionCallback = (id, data) => fetch.post(QUERYS.USER_SUB_MISSION(id), data);
 
 const defaultStates = {
@@ -51,8 +52,8 @@ function useUser(customInitialStates = {}) {
   }, []);
 
   const getUserMissionState = useCallback(missionId => getUserMissionStateCallback(missionId), []);
-
   const submitUserSubMission = useCallback((missionId, data) => submitUserSubMissionCallback(missionId, data), []);
+  const getUserSubMissions = useCallback(state => getUserSubMissionsCallback({ state }), []);
 
   return {
     userInfo,
@@ -63,6 +64,7 @@ function useUser(customInitialStates = {}) {
     connectMedium,
     getUserMissionState,
     submitUserSubMission,
+    getUserSubMissions,
   };
 }
 
