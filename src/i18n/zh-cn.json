@@ -65,9 +65,11 @@
   "user_e_name_max_size": "昵称不能多于100个字符",
   "user_e_email_format": "请填写正确格式的邮箱地址",
 
+  "missions_mission_state_all": "全部",
   "missions_mission_state_pending": "待上线",
   "missions_mission_state_progressing": "进行中",
   "missions_mission_state_finished": "已结束",
+  "missions_filter_state": "状态",
 
   "mission_group_title_twitter": "Twitter 任务",
   "mission_group_title_telegram": "Telegram 任务",

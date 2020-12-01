@@ -4,7 +4,7 @@ import fetch from '@utils/fetch';
 import QUERYS from '../querys';
 
 
-const getMissionsCallback = () => fetch.get(QUERYS.MISSIONS);
+const getMissionsCallback = data => fetch.get(QUERYS.MISSIONS, data);
 const getMissionDetailCallback = id => fetch.get(QUERYS.MISSION(id));
 const defaultStates = {};
 
@@ -14,7 +14,7 @@ function useMission(customInitialStates = {}) {
     ...customInitialStates,
   };
 
-  const getMissions = useCallback(() => getMissionsCallback(), []);
+  const getMissions = useCallback(state => getMissionsCallback({ state }), []);
 
   const getMissionDetail = useCallback(id => getMissionDetailCallback(id), []);
 
