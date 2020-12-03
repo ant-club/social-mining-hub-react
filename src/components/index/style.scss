@@ -5,12 +5,16 @@
     padding: 0;
   }
 
+  .content {
+    display: flex;
+  }
+
   .form {
     padding: 0 40px;
+    width: 70%;
 
     &-item {
       display: flex;
-      width: 60%;
       align-items: center;
       margin-bottom: 24px;
 
@@ -32,6 +36,85 @@
         .ant-select {
           width: 100%;
         }
+      }
+    }
+  }
+
+  .timeline {
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .timeline-node {
+      position: relative;
+      padding-left: 30px;
+      padding-bottom: 12px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 12px;
+        width: 2px;
+        height: 100%;
+        background: #ddd;
+      }
+
+      .icon {
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        top: 0;
+        left: 0;
+        padding: 5px 0;
+        text-align: center;
+        background: #fff;
+        z-index: 4;
+        color: #A16ECB;
+        line-height: 1;
+
+        .anticon {
+          font-size: 18px;
+        }
+      }
+      .datetime {
+        height: 26px;
+        line-height: 26px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .timeline-end {
+      position: relative;
+      padding-left: 30px;
+      height: 26px;
+      line-height: 26px;
+
+      .is-end {
+        font-style: italic;
+        opacity: 0.5;
+        font-size: 12px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        width: 2px;
+        height: 14px;
+        background: #ddd;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        width: 10px;
+        height: 2px;
+        background: #ddd;
       }
     }
   }

@@ -64,6 +64,13 @@
   "user_e_avatar_type": "请上传 JPG/PNG 格式的图片！",
   "user_e_name_max_size": "昵称不能多于100个字符",
   "user_e_email_format": "请填写正确格式的邮箱地址",
+  "user_timeline": "我的生涯记录",
+  "user_timeline_next": "加载更多",
+  "user_timeline_end": "到头啦！",
+  "user_timeline_desc_user_create": "在 Ant-Club 创建账户",
+  "user_timeline_desc_user_update": "更新了用户信息",
+  "user_timeline_desc_user_sub_mission_create": "提交证明：",
+  "user_timeline_desc_user_sub_mission_finish": "完成！",
 
   "missions_mission_state_all": "全部",
   "missions_mission_state_pending": "待上线",

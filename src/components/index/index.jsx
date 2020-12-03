@@ -3,6 +3,7 @@ import React, { useEffect, useCallback } from 'react';
 import User from '@models/user';
 import { Spin } from '@common/antd';
 import Form from './form';
+import Timeline from './timeline';
 
 import './style.scss';
 
@@ -18,7 +19,10 @@ function Index() {
   return (
     <div id="index">
       {address ? (
-        <Form data={userInfo || {}} />
+        <div className="content">
+          <Form data={userInfo || {}} />
+          <Timeline userInfo={userInfo || {}} />
+        </div>
       ) : (
         <div className="no-data">
           <Spin />

@@ -18,6 +18,8 @@ const QUERYS = {
   USER_MISSION: id => `/api/v1/user/mission/${id}.json`,
   USER_SUB_MISSION: id => `/api/v1/user/sub_mission/${id}.json`,
   USER_SUB_MISSIONS: '/api/v1/user/sub_missions.json',
+  USER_TIMELINE: '/api/v1/user/timeline.json',
+  USER_TIMELINE_DETAIL: id => `/api/v1/user/timeline/${id}.json`,
 };
 
 const { API } = config;
