@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --color --process --config webpack/webpack.config.dev.js --open",
     "clean": "rm -rf dist && mkdir dist",
     "production": "npm run clean && webpack --mode production --config webpack/webpack.config.production.js && mv dist/dashboard/dashboard.html dist/dashboard.html",
-    "release_test": "scp dist/assets/* test.io:~/public/assets"
+    "release_test": "scp dist/dashboard/* sm@test.social.isekai.me:~/www/social-mining-hub-express/lib/public/bundle"
   },
   "author": "",
   "license": "MIT",
